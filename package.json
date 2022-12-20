@@ -1,0 +1,25 @@
+{
+  "name": "team-org-chart-generator",
+  "version": "1.0.0",
+  "description": "Team Org Chart Generator using node.js and inquirer",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NBADRAUN/Team-Org-Chart-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NBADRAUN/Team-Org-Chart-Generator/issues"
+  },
+  "homepage": "https://github.com/NBADRAUN/Team-Org-Chart-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
