@@ -1,18 +1,26 @@
 [
   {
-    "name": "John weezely",
+    "name": "Intern Name 1",
     "role": "Intern",
     "id": "3333",
-    "email": "weezy@poop.com",
-    "school": "dwlfjdf",
-    "github": "Harry Potter"
+    "email": "Intern@Intern.com",
+    "school": "Githubname",
+    "github": "DU"
   },
   {
-    "name": "Bobby",
+    "name": "Engineer 1 Name",
     "role": "Engineer",
-    "id": "23434",
-    "email": "Bob@bob.com",
-    "school": "sdfsdf",
-    "github": "du"
+    "id": "5555",
+    "email": "Engineer@Engineer.com",
+    "school": "Github",
+    "github": "School of Mines"
+  },
+  {
+    "name": "Intern 2 Name",
+    "role": "Intern",
+    "id": "5433",
+    "email": "Intern2@Intern.com",
+    "school": "Mygithub",
+    "github": "Florida State"
   }
 ]

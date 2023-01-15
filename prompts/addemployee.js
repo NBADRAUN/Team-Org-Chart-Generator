@@ -1,16 +1,19 @@
+//// global includes //// 
 const inquirer = require("inquirer");
-const Employee = require("../library/employee"); 
+const Employee = require("../library/employee");
 const fs = require("fs");
 
+///creates an array to capture the employee data after each loop///
 const teamArray = [];
 
+//function to gather employee data /////
 const buildemployee = async () => {
   console.log(`
     Adding employees`);
 
+  /// inquirer questions to ask ///////
   return inquirer
-    .prompt([
-      {
+    .prompt([{
         type: "list",
         name: "role",
         message: "Please choose your employee's role",
@@ -90,27 +93,39 @@ const buildemployee = async () => {
     ])
     .then((employeeData) => {
       // creates the employee object //// 
-      const { name, id, email, role, github, school, confirmAddEmployee } = employeeData;
-      employee = new Employee(role, name, id, email, github,school);
+      const {
+        name,
+        id,
+        email,
+        role,
+        github,
+        school,
+        confirmAddEmployee
+      } = employeeData;
+      employee = new Employee(role, name, id, email, github, school);
 
       ///pushes the data to the team array to prepare for the loop///
       teamArray.push(employee);
 
-      /// if statement to evaluate if a loop is needed 
-        //if confirmaddemployee from inquiror is Yes, loop, else, move on///
+      /// if statement to evaluate if a loop is needed ////
+      //if confirmaddemployee from inquiror is Yes, loop, else, move on///
       if (confirmAddEmployee) {
         return buildemployee(teamArray);
       } else {
         console.log("Employee Data Added");
-           
-      var newData = JSON.stringify(teamArray);
-      fs.writeFile("employees.json", JSON.stringify(teamArray,null,2), (err) => {
-        if (err) throw err;
-        console.log("Employee Data Added!"); 
-      });
-      return teamArray;
+
+        ///stringifys the team array data ////
+        var newData = JSON.stringify(teamArray);
+        ///writes the stringified team array data to the employee JSON file //// 
+        fs.writeFile("employees.json", JSON.stringify(teamArray, null, 2), (err) => {
+          if (err) throw err;
+          console.log("Employee Data Added!");
+        });
+        return teamArray;
       }
     });
 };
 
-module.exports = {buildemployee};
+module.exports = {
+  buildemployee
+};

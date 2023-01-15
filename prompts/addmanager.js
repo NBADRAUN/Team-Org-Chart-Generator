@@ -1,10 +1,15 @@
+//global includes ///// 
 const inquirer = require("inquirer");
 const Manager = require("../library/manager");
 const Employee = require("../library/employee");
 const fs = require("fs");
 
+
+///function to build manager data //// 
 const buildmanager = async() => {
-  return inquirer    ////review here //////
+  
+  ///inquirer questions to ask /// 
+  return inquirer   
     .prompt([
       {
         type: "input",

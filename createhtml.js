@@ -2,7 +2,6 @@
 const cardsection = document.getElementById('cardsection');
 
 
-
 ///loop data /// 
 function createHTML() {
 

@@ -1,4 +1,4 @@
-// constructor 
+// employee constructor //
 class Employee {
     constructor (role, name, id, email,school,github) {
         this.name = name;
@@ -8,29 +8,31 @@ class Employee {
         this.school = school; 
         this.github = github; 
     }
-    // Return constructor name
+    // Return constructor name//
     returnName () {
         return this.name;
     }
+    // Return constructor role//
     returnRole () {
         return this.role; 
     }
-    // Return constructor id 
+    // Return constructor id //
     returnId () {
         return this.id;
     }   
-    // Return constructor email
+    // Return constructor email//
     returnEmail () {
         return this.email;
     }
-    // Return constructor role
+    // Return constructor school//
     returnSchool () {
         return this.school; 
     }
+    // Return constructor github//
     returnGithub () {
         return this.github; 
     }
 };
 
-// make module available to other includes
+// make module available //
 module.exports = Employee; 
