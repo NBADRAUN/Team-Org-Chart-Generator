@@ -44,3 +44,6 @@ THEN I exit the application, and the HTML is generated <br>
 
 Team Org Chart Generator <br>
 <img src="Challenge10.PNG" alt="Picture of the Challenge 10 HTML Output">
+
+Video of Team Org Chart Generator being run <br>
+[Untitled_ Jan 15, 2023 10_34 AM.webm](https://user-images.githubusercontent.com/114446244/212557923-8d1827b9-d8e9-4ae8-8cbb-056c2442decb.webm)
