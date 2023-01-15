@@ -1,13 +1,19 @@
 // constructor 
 class Employee {
-    constructor (name, id, email) {
+    constructor (role, name, id, email,school,github) {
         this.name = name;
+        this.role = role; 
         this.id = id;
-        this.email = email 
+        this.email = email;
+        this.school = school; 
+        this.github = github; 
     }
     // Return constructor name
     returnName () {
         return this.name;
+    }
+    returnRole () {
+        return this.role; 
     }
     // Return constructor id 
     returnId () {
@@ -18,8 +24,11 @@ class Employee {
         return this.email;
     }
     // Return constructor role
-    returnRole () {
-        return 'Employee'; 
+    returnSchool () {
+        return this.school; 
+    }
+    returnGithub () {
+        return this.github; 
     }
 };
 

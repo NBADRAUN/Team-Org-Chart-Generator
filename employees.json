@@ -1,1 +1,18 @@
-{"name":"fred","role":"Engineer","id":"3333","email":"d@dtv.com","officeNumber":"2222","github":"d","school":"d","confirmAddEmployee":true}
+[
+  {
+    "name": "John weezely",
+    "role": "Intern",
+    "id": "3333",
+    "email": "weezy@poop.com",
+    "school": "dwlfjdf",
+    "github": "Harry Potter"
+  },
+  {
+    "name": "Bobby",
+    "role": "Engineer",
+    "id": "23434",
+    "email": "Bob@bob.com",
+    "school": "sdfsdf",
+    "github": "du"
+  }
+]

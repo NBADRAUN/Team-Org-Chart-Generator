@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/NBADRAUN/Team-Org-Chart-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "node-json2html": "^2.2.2"
   },
   "devDependencies": {
     "jest": "^29.3.1"

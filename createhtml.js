@@ -1,38 +1,70 @@
-const http = require('http'); 
-const fs = require('fs'); 
+//global variables /// 
+const cardsection = document.getElementById('cardsection');
 
 
-function createHTML(request, response) {
-    response.writeHead(200,{'Content-Type' : 'text/html'}); 
-     fs.readFile('index.html', null, function(err,data) {
-        if (err) {
-            response.writeHead(404); 
-            response.write('file not found'); 
-        } else {
-        response.write(data); 
-        response.write(`
-        <section class="card-container d-flex flex-wrap flex-row">
-      <!-- Manager 1 -->
-      <div class="card m-5 text-white text-center bg-primary">
-        <div class="card-header">
-          <h3>Nick Badraun</h3>
-          <h4>Manager</h4>
-          <div class="card-body">
-            <p class="EmpID">Employee ID: 1</p>
-            <p class="Email">Email: Nbadraun@gmail.com</p>
-            <p class="Office">Office Number: 5543</p>
-          </div>
-        </div>
-      </div>
-      </section>
-            
-        `)
-                     
-        }
-        response.end(); 
-    }); 
+
+///loop data /// 
+function createHTML() {
+
+
+    ////get manager data from JSON then build Manager data/card/////
+    fetch('./manager.json')
+        .then(res => res.json())
+        .then(managerdata => {
+
+            ///create the manager card/////
+            var card = document.createElement('div');
+
+            //adds the manager card to the page and adds the HTML text/////
+            document.getElementById('mgrcardsection').appendChild(card);
+            card.classList.add('m-1');
+            card.classList.add('p-2');
+            card.classList.add('text-white');
+            card.classList.add('bg-primary');
+            card.classList.add('mx-auto');
+            card.style.cssText += 'background-color:#0275d8;color:white; text-align: left;width: 250px; height: 200px;margin: 10px';
+
+            card.innerHTML =
+                managerdata.name + "<br>" +
+                "Role: Manager" + "<br>" +
+                "Employee ID: " + managerdata.id + "<br>" +
+                "Office Number: " + managerdata.officeNumber + "<br>" +
+                "Email Address: " + managerdata.email
+        });
+
+    ////get manager data from JSON then build Manager data/card/////
+    fetch('./employees.json')
+        .then(res => res.json())
+        .then(employeedata => {
+
+            for (var i = 0; i < employeedata.length; i += 1) {
+
+
+               ///create the employee card/////
+                var card = document.createElement('div');
+                //adds the manager card to the page and adds the HTML text/////
+                document.getElementById('emplcardsection').appendChild(card);
+                card.classList.add('m-1');
+                card.classList.add('p-2');
+                card.classList.add('text-white');
+                card.classList.add('bg-success');
+                card.classList.add('mx-auto');
+                card.style.cssText += 'background-color:#0275d8;color:white; text-align: left;width: 250px; height: 200px;margin: 10px';
+
+                card.innerHTML =
+                    employeedata[i].name + "<br>" +
+                    "Role: " + employeedata[i].role + "<br>" +
+                    "Employee ID: " + employeedata[i].id + "<br>" +
+                    "Email Address: " + employeedata[i].email + "<br>" +
+                    "GibHub Name: " + employeedata[i].github + "<br>" +
+                    "School: " + employeedata[i].school + "<br>"
+
+            }
+
+        });
+
+
 }
 
-http.createServer(createHTML).listen(8000); 
-console.log(`Example app listening at http://localhost:8000`);
+createHTML();
 
